@@ -210,10 +210,14 @@ fleurs & chats
 
 /* tournesol */
 .header_nav_menu_list_item_story::after {
+    display: flex;
+    height: 160px;
+    justify-content: center;
     content: url(./assets/images/Sunflower.png);
     position: absolute;
     top: -4em;
     right: 14em;
+    transform-origin: center;
 }
 
 /* fleur orange */
@@ -221,6 +225,9 @@ fleurs & chats
     content: url(./assets/images/flower-little.png);
     position: absolute;
     left: 14em;
+    display: flex;
+    height: 70px;
+    justify-content: center;
 }
 
 /* chat noir */
@@ -237,6 +244,9 @@ fleurs & chats
     position: absolute;
     top: 2em;
     right: -2em;
+    display: flex;
+    height: 70px;
+    justify-content: center;
 }
 
 /* chat roux */
