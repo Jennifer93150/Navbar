@@ -1,0 +1,274 @@
+/********************
+GENERAL
+********************/
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+}
+
+a:hover {
+    text-shadow: 0px 0px 14px #FF5C00;
+}
+
+/********************
+ANIMATION
+********************/
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes close-menu {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes rotation-flower {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes diving {
+    0% {
+        margin-top: 1em;
+    }
+
+    25% {
+        margin-top: 0%;
+    }
+
+    50% {
+        margin-top: 2em;
+    }
+
+    75% {
+        margin-top: 3em;
+    }
+
+    100% {
+        margin-top: 1em;
+    }
+}
+
+@keyframes diving-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(3deg);
+    }
+
+    75% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/********************
+NAVBAR
+********************/
+
+.header_nav_bar {
+    position: absolute;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+    background: #FFD5A2;
+    z-index: 9;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header_nav_bar_title {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21.4799px;
+    text-shadow: none;
+    /* identical to box height */
+    letter-spacing: -0.02em;
+    
+}
+
+/* croix */
+.header_nav_bar_cross{
+    display: none;
+}
+
+/* burger */
+.header_nav_bar_burger {
+    /* margin-right: 40px; */
+    border: 0;
+    background-color: transparent;
+}
+
+/* ligne burger */
+.header_nav .header_nav_bar_burger_line {
+    height: 3px;
+    background-color: #000;
+    display: block;
+    margin: auto;
+    margin-block: 2px;
+    width: 20px;
+}
+
+/********************
+MENU 
+********************/
+.header_nav_menu {
+    display: none;
+    /* height: 100vh; */
+    background: #FFF5E9;
+    text-align: center;
+    overflow: hidden;
+}
+
+.header_nav.toggled .header_nav_menu {
+    display: block;
+    animation: fade-in 1500ms both;
+}
+
+.header_nav:not(.toggled) .header_nav_menu {
+    display: block;
+    animation: close-menu 1500ms both;
+}
+
+.header_nav_menu_img {
+    margin-top: 100px;
+}
+
+/* lien menu */
+.header_nav_menu_list_item_story,
+.header_nav_menu_list_item_place,
+.header_nav_menu_list_item_characters,
+.header_nav_menu_list_item_studio {
+    position: relative;
+    line-height: 100px;
+}
+
+/************************
+fleurs & chats
+*************************/
+/* FLEUR VIOLETTE */
+.header_nav_menu::before {
+    content: url(./assets/images/orchid.png);
+    position: absolute;
+    left: -4em;
+    top: 10em;
+}
+
+/* FLEUR ORANGE */
+.header_nav_menu::after {
+    content: url(./assets/images/hibiscus_footer.png);
+    position: absolute;
+    right: -23em;
+    bottom: -23em;
+}
+
+/* chat violet */
+.header_nav_menu_list_item_story::before {
+    content: url(./assets/images/cat.png);
+    position: absolute;
+    top: -1em;
+    left: 20em;
+}
+
+/* tournesol */
+.header_nav_menu_list_item_story::after {
+    content: url(./assets/images/Sunflower.png);
+    position: absolute;
+    top: -4em;
+    right: 14em;
+}
+
+/* fleur orange */
+.header_nav_menu_list_item_place::before {
+    content: url(./assets/images/flower-little.png);
+    position: absolute;
+    left: 14em;
+}
+
+/* chat noir */
+.header_nav_menu_list_item_place::after {
+    content: url(./assets/images/cat\ \(2\).png);
+    position: absolute;
+    right: 14em;
+}
+
+/* fleur ROSE */
+.header_nav_menu_list_item_characters::after {
+    display: block;
+    content: url(./assets/images/random_flower-ConvertImage.png);
+    position: absolute;
+    top: 2em;
+    right: -2em;
+}
+
+/* chat roux */
+.header_nav_menu_list_item_studio::before {
+    content: url(./assets/images/cat\ \(1\).png);
+    position: absolute;
+    top: 9em;
+    left: 5em;
+}
+
+/* KOUKAKI bas de menu */
+.header_nav_menu_studio-koukaki {
+    text-transform: uppercase;
+    /* position: absolute;
+        bottom: 0; */
+    width: 100%;
+    margin-top: 150px;
+}
+/********************
+ATTRIBUTION ANIMATION
+********************/
+.header_nav_menu::before,
+.header_nav_menu::after,
+.header_nav_menu_list_item_story::after,
+.header_nav_menu_list_item_place::before,
+.header_nav_menu_list_item_characters::after {
+    animation: 20s rotation-flower infinite linear;
+}
+
+.header_nav_menu_list_item_story::before,
+.header_nav_menu_list_item_place::after,
+.header_nav_menu_list_item_studio::before {
+    animation: diving 3s ease-in-out infinite,
+        diving-rotate 3s ease-in-out infinite;
+}
